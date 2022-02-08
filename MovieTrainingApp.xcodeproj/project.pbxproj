@@ -40,9 +40,13 @@
 		DD2038A5279FE55D0072F977 /* bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD203898279FE55D0072F977 /* bg@3x.png */; };
 		DD2038A7279FE6ED0072F977 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038A6279FE6ED0072F977 /* MovieDetailController.swift */; };
 		DD2038AC27A252E70072F977 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD2038AB27A252E70072F977 /* Alamofire */; };
-		DD2038AE27A253090072F977 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038AD27A253090072F977 /* ApiService.swift */; };
+		DD2038AE27A253090072F977 /* MovieListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038AD27A253090072F977 /* MovieListService.swift */; };
 		DD2038BD27A25F220072F977 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038BB27A25F220072F977 /* MovieCell.swift */; };
 		DD2038BE27A25F220072F977 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2038BC27A25F220072F977 /* MovieCell.xib */; };
+		DD2038C127A3F23B0072F977 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DD2038C027A3F23B0072F977 /* SwiftyJSON */; };
+		DD2038C427B208C20072F977 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038C327B208C20072F977 /* MovieData.swift */; };
+		DD2038C727B2266B0072F977 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038C627B2266B0072F977 /* Constant.swift */; };
+		DD2038CE27B26D140072F977 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038CD27B26D140072F977 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,9 +84,12 @@
 		DD203897279FE55D0072F977 /* ic_like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_like@3x.png"; sourceTree = "<group>"; };
 		DD203898279FE55D0072F977 /* bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@3x.png"; sourceTree = "<group>"; };
 		DD2038A6279FE6ED0072F977 /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
-		DD2038AD27A253090072F977 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		DD2038AD27A253090072F977 /* MovieListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListService.swift; sourceTree = "<group>"; };
 		DD2038BB27A25F220072F977 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		DD2038BC27A25F220072F977 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		DD2038C327B208C20072F977 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		DD2038C627B2266B0072F977 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DD2038CD27B26D140072F977 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2038C127A3F23B0072F977 /* SwiftyJSON in Frameworks */,
 				DD2038AC27A252E70072F977 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +124,8 @@
 		DD203858279FE3F60072F977 /* MovieTrainingApp */ = {
 			isa = PBXGroup;
 			children = (
+				DD2038C527B2265E0072F977 /* Utils */,
+				DD2038C227B208A10072F977 /* Models */,
 				DD2038A927A252150072F977 /* CustomViews */,
 				DD2038A827A250100072F977 /* Extensions */,
 				DD203873279FE4220072F977 /* Services */,
@@ -161,7 +171,7 @@
 		DD203873279FE4220072F977 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DD2038AD27A253090072F977 /* ApiService.swift */,
+				DD2038AD27A253090072F977 /* MovieListService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,6 +217,7 @@
 		DD2038A827A250100072F977 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DD2038CD27B26D140072F977 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +229,22 @@
 				DD2038BC27A25F220072F977 /* MovieCell.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DD2038C227B208A10072F977 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD2038C327B208C20072F977 /* MovieData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD2038C527B2265E0072F977 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DD2038C627B2266B0072F977 /* Constant.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +265,7 @@
 			name = MovieTrainingApp;
 			packageProductDependencies = (
 				DD2038AB27A252E70072F977 /* Alamofire */,
+				DD2038C027A3F23B0072F977 /* SwiftyJSON */,
 			);
 			productName = MovieTrainingApp;
 			productReference = DD203856279FE3F60072F977 /* MovieTrainingApp.app */;
@@ -269,6 +297,7 @@
 			mainGroup = DD20384D279FE3F60072F977;
 			packageReferences = (
 				DD2038AA27A252E70072F977 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DD2038BF27A3F23B0072F977 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = DD203857279FE3F60072F977 /* Products */;
 			projectDirPath = "";
@@ -324,10 +353,13 @@
 			files = (
 				DD20385E279FE3F60072F977 /* MovieListController.swift in Sources */,
 				DD2038A7279FE6ED0072F977 /* MovieDetailController.swift in Sources */,
-				DD2038AE27A253090072F977 /* ApiService.swift in Sources */,
+				DD2038C727B2266B0072F977 /* Constant.swift in Sources */,
+				DD2038AE27A253090072F977 /* MovieListService.swift in Sources */,
 				DD20385A279FE3F60072F977 /* AppDelegate.swift in Sources */,
 				DD203864279FE3F60072F977 /* MovieTrainingApp.xcdatamodeld in Sources */,
+				DD2038CE27B26D140072F977 /* UIImageView.swift in Sources */,
 				DD2038BD27A25F220072F977 /* MovieCell.swift in Sources */,
+				DD2038C427B208C20072F977 /* MovieData.swift in Sources */,
 				DD20385C279FE3F60072F977 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +590,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DD2038BF27A3F23B0072F977 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -565,6 +605,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD2038AA27A252E70072F977 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		DD2038C027A3F23B0072F977 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD2038BF27A3F23B0072F977 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 

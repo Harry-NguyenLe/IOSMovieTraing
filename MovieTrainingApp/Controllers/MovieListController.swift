@@ -7,17 +7,18 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class MovieListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
-    let dataSource = ["first", "second", "third", "fourth", "fifth"]
+    var dataSource: [MovieData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationBar()
         configTableView()
-        getDataSource()
+        getDataSource(with: 1)
     }
     
     //MARK - Configuration
@@ -44,24 +45,37 @@ class MovieListController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Return cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        cell.movieTitleLabel?.text = dataSource[indexPath.row]
+        let item = dataSource![indexPath.row]
+        cell.movieTitleLabel.text = item.title
+        cell.movieDescriptionLabel.text = item.overview
+        cell.movieViewsNumberLabel.text = item.popularity.description
+        cell.moviePosterView.loadImageUsingCacheWithURLString(
+            Constant.IMAGE_URL + item.posterPath,
+            placeHolder: UIImage(named: "Account")
+        )
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Return number of cell
-        return dataSource.count
+        if self.dataSource != nil {
+            return dataSource!.count
+        }else {
+            return 0
+        }
     }
-    
+   
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
     
     
     //MARK - Get data from API
-    private func getDataSource(){
-        AF.request("https://api.themoviedb.org/4/list/2?page=1&api_key=55ed3f19957a0b683168d1011d835a73").response { response in
-            print(response)
+    private func getDataSource(with page: Int){
+        let service = MovieListService()
+        service.getRequest(with: page) {result in
+            self.dataSource = result
+            self.tableView.reloadData()
         }
     }
 }
