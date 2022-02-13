@@ -17,19 +17,31 @@ class MovieListController: UIViewController, UITableViewDelegate, MovieTableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigationBar()
         configTableView()
         getDataSource(with: self.page)
     }
     
-    //MARK: - Init Configuration
-    private func configNavigationBar(){
-        navigationController?.navigationBar.setTitleVerticalPositionAdjustment(
-            CGFloat(-10),
-            for: UIBarMetrics.default
-        )
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configNavigationBar()
     }
     
+    private func configNavigationBar(){
+        let appColor = UIColor(red: 202/255, green: 92/255, blue: 39/255, alpha: 1.0)
+        self.navigationController?.setStatusBar(
+            backgroundColor: appColor
+        )
+
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.backgroundColor = appColor
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 18)!
+        ]
+        navigationItem.title = "HFILM"
+    }
+
+        
     private func configTableView(){
         let bgImage = UIImage(named: "bg@3x.png")
         let imageView = UIImageView(image: bgImage)
@@ -52,7 +64,7 @@ class MovieListController: UIViewController, UITableViewDelegate, MovieTableView
         let item = dataSource[indexPath.row]
         cell.movieTitleLabel.text = item.title
         cell.movieDescriptionLabel.text = item.overview
-        cell.movieViewsNumberLabel.text = item.popularity.description
+        cell.movieViewsNumberLabel.text = "Views number: " + item.popularity.description
         cell.moviePosterView.loadImageUsingCacheWithURLString(
             Constant.IMAGE_URL + item.posterPath,
             placeHolder: UIImage(named: "Account")
@@ -68,6 +80,7 @@ class MovieListController: UIViewController, UITableViewDelegate, MovieTableView
     }
    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Config the table view display
         cell.backgroundColor = UIColor.clear
         let lastElement = dataSource.count - 1
         
@@ -93,6 +106,8 @@ class MovieListController: UIViewController, UITableViewDelegate, MovieTableView
                 }
                 self.page = page + 1
                 self.tableView.reloadData()
+            }else{
+                self.showToast(message: "End of list reached", font: .systemFont(ofSize: 12.0))
             }
         }
     }
@@ -100,7 +115,14 @@ class MovieListController: UIViewController, UITableViewDelegate, MovieTableView
     
     //MARK: - Perform click on watch movie btn
     func watchMovieBtnClick(subcribeButtonTappedFor movieData: MovieData) {
-        debugPrint(movieData.title)
+        goToMovieDetailScreen(movieData: movieData)
+    }
+    
+    //MARK: - Screen Navigation
+    func goToMovieDetailScreen(movieData: MovieData){
+        let movieDetailVC = storyboard?.instantiateViewController(withIdentifier: "MovieDetailController") as? MovieDetailController
+        movieDetailVC?.movieData = movieData
+        navigationController?.pushViewController(movieDetailVC!, animated: true)
     }
 }
 

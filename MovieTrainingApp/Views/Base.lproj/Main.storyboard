@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HFILM-->
+        <!--Movie List Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MovieListController" customModule="MovieTrainingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MovieListController" customModule="MovieTrainingApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByL-DT-Gy4">
-                                <rect key="frame" x="0.0" y="122" width="414" height="2"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="NCZ-fN-c6t"/>
@@ -27,40 +27,60 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="220" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N37-Z1-jJ3">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="46" width="414" height="816"/>
                                 <color key="backgroundColor" red="0.6707756519317627" green="0.36992168426513672" blue="0.17674395442008972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="aag-Ir-Sq4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ByL-DT-Gy4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4aa-4T-BKB"/>
-                            <constraint firstItem="ByL-DT-Gy4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6Mm-fD-6OR"/>
+                            <constraint firstItem="ByL-DT-Gy4" firstAttribute="leading" secondItem="aag-Ir-Sq4" secondAttribute="leading" id="4aa-4T-BKB"/>
+                            <constraint firstItem="ByL-DT-Gy4" firstAttribute="top" secondItem="aag-Ir-Sq4" secondAttribute="top" id="6Mm-fD-6OR"/>
                             <constraint firstItem="N37-Z1-jJ3" firstAttribute="top" secondItem="ByL-DT-Gy4" secondAttribute="bottom" id="Aqo-3B-N1I"/>
-                            <constraint firstItem="N37-Z1-jJ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ItO-vJ-hzY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N37-Z1-jJ3" secondAttribute="bottom" id="nd9-SQ-YZh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N37-Z1-jJ3" secondAttribute="trailing" id="oul-ZU-X8G"/>
-                            <constraint firstAttribute="trailing" secondItem="ByL-DT-Gy4" secondAttribute="trailing" id="ppV-RY-rGC"/>
+                            <constraint firstItem="N37-Z1-jJ3" firstAttribute="leading" secondItem="aag-Ir-Sq4" secondAttribute="leading" id="ItO-vJ-hzY"/>
+                            <constraint firstItem="aag-Ir-Sq4" firstAttribute="bottom" secondItem="N37-Z1-jJ3" secondAttribute="bottom" id="nd9-SQ-YZh"/>
+                            <constraint firstItem="aag-Ir-Sq4" firstAttribute="trailing" secondItem="N37-Z1-jJ3" secondAttribute="trailing" id="oul-ZU-X8G"/>
+                            <constraint firstItem="aag-Ir-Sq4" firstAttribute="trailing" secondItem="ByL-DT-Gy4" secondAttribute="trailing" id="ppV-RY-rGC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="HFILM" prompt=" " id="lrp-OF-B0V"/>
+                    <navigationItem key="navigationItem" id="5YL-7q-6O6"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="N37-Z1-jJ3" id="ye8-zk-2Gr"/>
+                        <segue destination="561-oD-Awu" kind="show" identifier="MovieDetailSegue" id="yn0-cQ-8jx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="93.75"/>
         </scene>
+        <!--Movie Detail Controller-->
+        <scene sceneID="v6s-op-iaQ">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailController" id="561-oD-Awu" customClass="MovieDetailController" customModule="MovieTrainingApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z7c-ug-fwX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zRv-7r-Xr4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="iMs-EU-X6D">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="bkh-kZ-0hi"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2md-DR-Q9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811.594202898551" y="93.75"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="yas-c6-PFr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l7A-QU-acn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="center" id="iQc-rT-lmU">
+                    <navigationBar key="navigationBar" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="iQc-rT-lmU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.92265689373016357" green="0.45136956669866829" blue="0.10319467446536058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="35"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

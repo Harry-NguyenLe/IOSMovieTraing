@@ -49,6 +49,8 @@
 		DD2038CE27B26D140072F977 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038CD27B26D140072F977 /* UIImageView.swift */; };
 		DD2038D027B377040072F977 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038CF27B377040072F977 /* LikeButton.swift */; };
 		DD28DA4627B64191006CFFC7 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4527B64191006CFFC7 /* BaseResponse.swift */; };
+		DD28DA4827B940D9006CFFC7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4727B940D9006CFFC7 /* UIViewController.swift */; };
+		DD28DA4A27B96DAA006CFFC7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		DD2038CD27B26D140072F977 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		DD2038CF27B377040072F977 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		DD28DA4527B64191006CFFC7 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		DD28DA4727B940D9006CFFC7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				DD2038CD27B26D140072F977 /* UIImageView.swift */,
+				DD28DA4727B940D9006CFFC7 /* UIViewController.swift */,
+				DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,11 +370,13 @@
 				DD2038D027B377040072F977 /* LikeButton.swift in Sources */,
 				DD2038AE27A253090072F977 /* MovieListService.swift in Sources */,
 				DD20385A279FE3F60072F977 /* AppDelegate.swift in Sources */,
+				DD28DA4827B940D9006CFFC7 /* UIViewController.swift in Sources */,
 				DD203864279FE3F60072F977 /* MovieTrainingApp.xcdatamodeld in Sources */,
 				DD2038CE27B26D140072F977 /* UIImageView.swift in Sources */,
 				DD2038BD27A25F220072F977 /* MovieCell.swift in Sources */,
 				DD2038C427B208C20072F977 /* MovieData.swift in Sources */,
 				DD20385C279FE3F60072F977 /* SceneDelegate.swift in Sources */,
+				DD28DA4A27B96DAA006CFFC7 /* UINavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
