@@ -9,19 +9,20 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MovieListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MovieListController: UIViewController, UITableViewDelegate, MovieTableViewCellDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
-    var dataSource: [MovieData]?
+    var dataSource: [MovieData] = Array()
+    var page: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationBar()
         configTableView()
-        getDataSource(with: 1)
+        getDataSource(with: self.page)
     }
     
-    //MARK - Configuration
+    //MARK: - Init Configuration
     private func configNavigationBar(){
         navigationController?.navigationBar.setTitleVerticalPositionAdjustment(
             CGFloat(-10),
@@ -39,13 +40,16 @@ class MovieListController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.register(nib, forCellReuseIdentifier: "MovieCell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame: .zero)
+        
     }
      
-    //MARK - Setting tableview
+    //MARK: - Setting tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Return cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        let item = dataSource![indexPath.row]
+                
+        let item = dataSource[indexPath.row]
         cell.movieTitleLabel.text = item.title
         cell.movieDescriptionLabel.text = item.overview
         cell.movieViewsNumberLabel.text = item.popularity.description
@@ -53,30 +57,50 @@ class MovieListController: UIViewController, UITableViewDelegate, UITableViewDat
             Constant.IMAGE_URL + item.posterPath,
             placeHolder: UIImage(named: "Account")
         )
+        cell.movieData = item
+        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Return number of cell
-        if self.dataSource != nil {
-            return dataSource!.count
-        }else {
-            return 0
-        }
+        return dataSource.count
     }
    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
+        let lastElement = dataSource.count - 1
+        
+        if indexPath.row == lastElement {
+            self.perform(#selector(loadTable), with: nil, afterDelay: 1.0 )
+        }
+
+    }
+    
+    @objc func loadTable(){
+        self.getDataSource(with: self.page)
+    }
+    
+    //MARK: - Get data from API
+    private func getDataSource(with page: Int){
+        let service = MovieListService()
+        service.getRequest(with: self.page) {result in
+            if result.count > 0{
+                if self.dataSource.count <= 0 {
+                    self.dataSource = result
+                }else {
+                    self.dataSource.append(contentsOf: result)
+                }
+                self.page = page + 1
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
-    //MARK - Get data from API
-    private func getDataSource(with page: Int){
-        let service = MovieListService()
-        service.getRequest(with: page) {result in
-            self.dataSource = result
-            self.tableView.reloadData()
-        }
+    //MARK: - Perform click on watch movie btn
+    func watchMovieBtnClick(subcribeButtonTappedFor movieData: MovieData) {
+        debugPrint(movieData.title)
     }
 }
 

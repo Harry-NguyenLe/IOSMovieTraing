@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-struct MovieData: Decodable {
+class MovieData: Decodable {
     var posterPath: String
     var title: String
     var originalTitle: String
@@ -23,7 +23,7 @@ struct MovieData: Decodable {
         self.overview = overview
     }
     
-   static func buildFrom(jsonResponse: JSON) -> [MovieData]{
+   static func buildFrom(jsonResponse: JSON) -> [MovieData] {
        var movieList = [MovieData]()
        let json: Array<JSON> = jsonResponse["results"].arrayValue
        
@@ -43,6 +43,5 @@ struct MovieData: Decodable {
            movieList.append(movieData)
        }
        return movieList
-       
     }
 }

@@ -12,6 +12,7 @@ import CoreData
 import SwiftyJSON
 
 class MovieListService: NSObject {
+    let TAG: String = "MovieListService"
     
     public func getRequest(with page: Int, handleComplete: @escaping (_ result: [MovieData]) -> ()){
         let headers: HTTPHeaders = [
@@ -27,8 +28,11 @@ class MovieListService: NSObject {
                    parameters: params,
                    headers: headers)
             .responseDecodable(of: MovieData.self) {response in
-                let responseData = try! JSON(data: response.data!)
-                handleComplete(MovieData.buildFrom(jsonResponse: responseData))
+                debugPrint(params)
+                if response.data != nil {
+                    let responseData = try! JSON(data: response.data!)
+                    handleComplete(MovieData.buildFrom(jsonResponse: responseData))
+                }
         }
     }
 }

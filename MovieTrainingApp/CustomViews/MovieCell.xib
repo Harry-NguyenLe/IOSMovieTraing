@@ -25,30 +25,51 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title in English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="pWH-vT-W16">
                         <rect key="frame" x="184" y="12" width="387" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.92265689370000004" green="0.4513695667" blue="0.1031946745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Views number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO2-9z-E3W">
                         <rect key="frame" x="184" y="44.5" width="367" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.6707756519317627" green="0.36992168426513672" blue="0.17674395442008972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-fX-lWv">
-                        <rect key="frame" x="184" y="73.5" width="367" height="145.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-fX-lWv">
+                        <rect key="frame" x="184" y="73.5" width="367" height="136.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzo-eG-Y8t">
-                        <rect key="frame" x="482.5" y="231" width="88.5" height="31"/>
+                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzo-eG-Y8t">
+                        <rect key="frame" x="456" y="222" width="115" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="xcF-5L-FPY"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Xem phim"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Watch movie">
+                            <fontDescription key="titleFontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="baseBackgroundColor" red="0.92265689370000004" green="0.4513695667" blue="0.1031946745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="setOnWatchMovieClickListener:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ygp-8p-OD2"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwn-Ck-6rt">
-                        <rect key="frame" x="184" y="231" width="60" height="31"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Thích"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwn-Ck-6rt">
+                        <rect key="frame" x="184" y="222" width="70" height="40"/>
+                        <buttonConfiguration key="configuration" style="plain" image="Like">
+                            <attributedString key="attributedTitle">
+                                <fragment content="  Like">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="cellTitle"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="setOnTouchListener:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GKJ-do-H8L"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -62,13 +83,14 @@
                     <constraint firstAttribute="bottom" secondItem="Cp2-Tg-vAQ" secondAttribute="bottom" constant="12" id="aM7-fH-HaG"/>
                     <constraint firstAttribute="trailing" secondItem="pWH-vT-W16" secondAttribute="trailing" constant="12" id="ayn-wu-Ios"/>
                     <constraint firstAttribute="bottom" secondItem="jzo-eG-Y8t" secondAttribute="bottom" constant="12" id="e1a-uV-MXL"/>
-                    <constraint firstItem="Kwn-Ck-6rt" firstAttribute="leading" secondItem="Cp2-Tg-vAQ" secondAttribute="trailing" constant="8" id="fTX-YA-UPj"/>
                     <constraint firstItem="pWH-vT-W16" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="h43-kF-Uyz"/>
                     <constraint firstItem="fO2-9z-E3W" firstAttribute="leading" secondItem="Cp2-Tg-vAQ" secondAttribute="trailing" constant="8" id="kAI-EV-zig"/>
                     <constraint firstItem="Cp2-Tg-vAQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="pFO-js-883"/>
                     <constraint firstItem="fO2-9z-E3W" firstAttribute="top" secondItem="pWH-vT-W16" secondAttribute="bottom" constant="12" id="tiA-SX-msP"/>
                     <constraint firstItem="9kt-fX-lWv" firstAttribute="top" secondItem="fO2-9z-E3W" secondAttribute="bottom" constant="8" id="ucD-lN-jIl"/>
+                    <constraint firstAttribute="bottom" secondItem="Kwn-Ck-6rt" secondAttribute="bottom" constant="12" id="uiv-fF-anj"/>
                     <constraint firstItem="Cp2-Tg-vAQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="voC-GZ-6TU"/>
+                    <constraint firstItem="Kwn-Ck-6rt" firstAttribute="leading" secondItem="Cp2-Tg-vAQ" secondAttribute="trailing" constant="8" id="zKH-i0-6yp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -84,4 +106,7 @@
             <point key="canvasLocation" x="123.91304347826087" y="70.982142857142847"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Like" width="16" height="14"/>
+    </resources>
 </document>

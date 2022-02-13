@@ -47,6 +47,8 @@
 		DD2038C427B208C20072F977 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038C327B208C20072F977 /* MovieData.swift */; };
 		DD2038C727B2266B0072F977 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038C627B2266B0072F977 /* Constant.swift */; };
 		DD2038CE27B26D140072F977 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038CD27B26D140072F977 /* UIImageView.swift */; };
+		DD2038D027B377040072F977 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038CF27B377040072F977 /* LikeButton.swift */; };
+		DD28DA4627B64191006CFFC7 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4527B64191006CFFC7 /* BaseResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		DD2038C327B208C20072F977 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		DD2038C627B2266B0072F977 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DD2038CD27B26D140072F977 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		DD2038CF27B377040072F977 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		DD28DA4527B64191006CFFC7 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 			children = (
 				DD2038BB27A25F220072F977 /* MovieCell.swift */,
 				DD2038BC27A25F220072F977 /* MovieCell.xib */,
+				DD2038CF27B377040072F977 /* LikeButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				DD2038C327B208C20072F977 /* MovieData.swift */,
+				DD28DA4527B64191006CFFC7 /* BaseResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +360,8 @@
 				DD20385E279FE3F60072F977 /* MovieListController.swift in Sources */,
 				DD2038A7279FE6ED0072F977 /* MovieDetailController.swift in Sources */,
 				DD2038C727B2266B0072F977 /* Constant.swift in Sources */,
+				DD28DA4627B64191006CFFC7 /* BaseResponse.swift in Sources */,
+				DD2038D027B377040072F977 /* LikeButton.swift in Sources */,
 				DD2038AE27A253090072F977 /* MovieListService.swift in Sources */,
 				DD20385A279FE3F60072F977 /* AppDelegate.swift in Sources */,
 				DD203864279FE3F60072F977 /* MovieTrainingApp.xcdatamodeld in Sources */,

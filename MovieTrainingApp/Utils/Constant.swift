@@ -10,7 +10,7 @@ import CoreData
 
 class Constant {
     // API URL
-    static let MOVIE_LIST = "https://api.themoviedb.org/4/list/2"
+    static let MOVIE_LIST = "https://api.themoviedb.org/3/movie/popular"
     
     //IMAGE PREFIX
     static let IMAGE_URL = "https://image.tmdb.org/t/p/w500"
