@@ -51,6 +51,7 @@
 		DD28DA4627B64191006CFFC7 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4527B64191006CFFC7 /* BaseResponse.swift */; };
 		DD28DA4827B940D9006CFFC7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4727B940D9006CFFC7 /* UIViewController.swift */; };
 		DD28DA4A27B96DAA006CFFC7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */; };
+		DD28DA4D27B976D2006CFFC7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD28DA4C27B976D2006CFFC7 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD28DA4D27B976D2006CFFC7 /* RealmSwift in Frameworks */,
 				DD2038C127A3F23B0072F977 /* SwiftyJSON in Frameworks */,
 				DD2038AC27A252E70072F977 /* Alamofire in Frameworks */,
 			);
@@ -278,6 +280,7 @@
 			packageProductDependencies = (
 				DD2038AB27A252E70072F977 /* Alamofire */,
 				DD2038C027A3F23B0072F977 /* SwiftyJSON */,
+				DD28DA4C27B976D2006CFFC7 /* RealmSwift */,
 			);
 			productName = MovieTrainingApp;
 			productReference = DD203856279FE3F60072F977 /* MovieTrainingApp.app */;
@@ -310,6 +313,7 @@
 			packageReferences = (
 				DD2038AA27A252E70072F977 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DD2038BF27A3F23B0072F977 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				DD28DA4B27B976D2006CFFC7 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = DD203857279FE3F60072F977 /* Products */;
 			projectDirPath = "";
@@ -614,6 +618,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DD28DA4B27B976D2006CFFC7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -626,6 +638,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD2038BF27A3F23B0072F977 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		DD28DA4C27B976D2006CFFC7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD28DA4B27B976D2006CFFC7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
