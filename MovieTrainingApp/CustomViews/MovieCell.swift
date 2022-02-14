@@ -11,6 +11,14 @@ protocol MovieTableViewCellDelegate: AnyObject {
     func watchMovieBtnClick(subcribeButtonTappedFor movieData: MovieData)
 }
 
+protocol LikeMovieDelegate: AnyObject {
+    func likeMovieSet(movieData: MovieDataStorage)
+}
+
+protocol UnlikeMovieDelegate: AnyObject {
+    func unlikeMovieSet(movieData: MovieDataStorage)
+}
+
 class MovieCell: UITableViewCell {
 
     @IBOutlet weak var moviePosterView: UIImageView!
@@ -27,9 +35,15 @@ class MovieCell: UITableViewCell {
     
     weak var delegate: MovieTableViewCellDelegate?
     
+    weak var likeDelegate: LikeMovieDelegate?
+    
+    weak var unlikeDelegate: UnlikeMovieDelegate?
+    
     var isLike = false
     
     var movieData: MovieData?
+    
+    var movieDataStorage: MovieDataStorage?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +53,13 @@ class MovieCell: UITableViewCell {
         self.movieWatchingButton.addTarget(self, action: #selector(setOnWatchMovieClickListener(_:)), for: .touchUpInside)
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.movieLikedButton.setImage(UIImage(named: "ic_like@3x.png"), for: .normal)
+        self.movieLikedButton.setTitle("  Like", for: .normal)
+    }
+
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -55,12 +76,23 @@ class MovieCell: UITableViewCell {
     @IBAction func setOnTouchListener(_ sender: LikeButton) {
         if isLike == true {
             isLike = false
-            movieLikedButton.setImage(UIImage(named: "ic_like_orange@3x.png"), for: .normal)
-            movieLikedButton.setTitle("  Liked", for: .normal)
-        }else {
-            isLike = true
             movieLikedButton.setImage(UIImage(named: "ic_like@3x.png"), for: .normal)
             movieLikedButton.setTitle("  Like", for: .normal)
+            self.unlikeDelegate?.unlikeMovieSet(movieData: movieDataStorage!)
+        }else {
+            isLike = true
+            movieLikedButton.setImage(UIImage(named: "ic_like_orange@3x.png"), for: .normal)
+            movieLikedButton.setTitle("  Liked", for: .normal)
+            self.likeDelegate?.likeMovieSet(movieData: movieDataStorage!)
         }
     }
+    
+    func updateFilmLiked(data: MovieDataStorage) {
+        if (data.title == movieData?.title) {
+            movieLikedButton.setImage(UIImage(named: "ic_like_orange@3x.png"), for: .normal)
+            movieLikedButton.setTitle("  Liked", for: .normal)
+        }
+    }
+
+    
 }

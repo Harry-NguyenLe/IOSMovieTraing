@@ -52,6 +52,8 @@
 		DD28DA4827B940D9006CFFC7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4727B940D9006CFFC7 /* UIViewController.swift */; };
 		DD28DA4A27B96DAA006CFFC7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */; };
 		DD28DA4D27B976D2006CFFC7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD28DA4C27B976D2006CFFC7 /* RealmSwift */; };
+		DD28DA4F27B9817D006CFFC7 /* MovieDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA4E27B9817D006CFFC7 /* MovieDataStorage.swift */; };
+		DD28DA5327BA6524006CFFC7 /* ScreenCascadeDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28DA5227BA6524006CFFC7 /* ScreenCascadeDeletion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		DD28DA4527B64191006CFFC7 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		DD28DA4727B940D9006CFFC7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		DD28DA4E27B9817D006CFFC7 /* MovieDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataStorage.swift; sourceTree = "<group>"; };
+		DD28DA5227BA6524006CFFC7 /* ScreenCascadeDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCascadeDeletion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,7 @@
 				DD2038CD27B26D140072F977 /* UIImageView.swift */,
 				DD28DA4727B940D9006CFFC7 /* UIViewController.swift */,
 				DD28DA4927B96DAA006CFFC7 /* UINavigationController.swift */,
+				DD28DA5227BA6524006CFFC7 /* ScreenCascadeDeletion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			children = (
 				DD2038C327B208C20072F977 /* MovieData.swift */,
 				DD28DA4527B64191006CFFC7 /* BaseResponse.swift */,
+				DD28DA4E27B9817D006CFFC7 /* MovieDataStorage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,9 +383,11 @@
 				DD28DA4827B940D9006CFFC7 /* UIViewController.swift in Sources */,
 				DD203864279FE3F60072F977 /* MovieTrainingApp.xcdatamodeld in Sources */,
 				DD2038CE27B26D140072F977 /* UIImageView.swift in Sources */,
+				DD28DA4F27B9817D006CFFC7 /* MovieDataStorage.swift in Sources */,
 				DD2038BD27A25F220072F977 /* MovieCell.swift in Sources */,
 				DD2038C427B208C20072F977 /* MovieData.swift in Sources */,
 				DD20385C279FE3F60072F977 /* SceneDelegate.swift in Sources */,
+				DD28DA5327BA6524006CFFC7 /* ScreenCascadeDeletion.swift in Sources */,
 				DD28DA4A27B96DAA006CFFC7 /* UINavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

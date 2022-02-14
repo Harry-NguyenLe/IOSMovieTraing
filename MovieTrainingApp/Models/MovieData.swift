@@ -9,12 +9,12 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-class MovieData: Object, Decodable  {
-    @objc dynamic var posterPath: String
-    @objc dynamic var title: String
-    @objc dynamic var originalTitle: String
-    @objc dynamic var popularity: Float
-    @objc dynamic var overview: String
+struct MovieData: Decodable  {
+    var posterPath: String
+    var title: String
+    var originalTitle: String
+    var popularity: Float
+    var overview: String
     
     private init(posterPath: String, title: String, originalTitle: String, popularity: Float, overview: String){
         self.posterPath = posterPath
